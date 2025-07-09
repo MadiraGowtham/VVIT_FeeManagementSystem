@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVIT FMS AdminDashboard</title>
+    <link rel="stylesheet" href="../CSS/adminIndex.css">
+</head>
+<body>
+    <header>
+        <img src="../images/vvit.jpeg" alt="VVIT Logo" class="logo">
+        <div class="nav">
+            <a href="student.html" class="btn">Students</a>
+            <a href="#reports" class="btn">Download Receipt</a>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <h1 class="name" id="name"></h1>
+        <div class="info">
+            <div class="total" id="total"></div>
+            <div class="collected" id="upcoming"></div>
+            <div class="default" id="outstanding"></div>
+        </div>
+        <div class="receipt">
+            <h1 class="title">Receipts</h1>
+            <div class="filter">
+                <select id="branch1" class="branch">
+                    <option selected>Select Branch</option>
+                    <option value="CSE">CSE</option>
+                    <option value="AID">AID</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MECH">MECH</option>
+                    <option value="CIVIL">CIVIL</option>
+                </select>
+                <div class="branch" id="students1"></div>
+                <button class="btn1" onclick="uploadReceipt()">Upload</button>
+            </div>
+        </div>
+        <div class="reports" id="reports">
+            <h1 class="title">Download Receipt</h1>
+            <div class="filter">
+                <select id="branch2" class="branch">
+                    <option selected>Select Branch</option>
+                    <option value="CSE">CSE</option>
+                    <option value="AID">AID</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MECH">MECH</option>
+                    <option value="CIVIL">CIVIL</option>
+                </select>
+                <div class="branch" id="students2"></div>
+                <div id="semesters2"></div>
+                <button class="btn1" onclick="downloadReceipt()">Download</button>
+            </div>
+        </div>
+        <div class="upload" id="upload" style="display: none;">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 VVIT Fee Management System. All rights reserved.</p>
+    </footer>
+    <script src="../JS/adminIndex.js"></script>
+</body>
+</html>

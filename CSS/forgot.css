@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #751f1f;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 2px 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(244, 241, 241, 0.573);
+}
+.nav{
+    display: flex;
+    gap: 30px;
+}
+.logo{
+    transform: scale(0.5);
+    margin-left: -30px;
+}
+.btn{
+    color: #751f1f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 10px;
+}
+.btn:hover , .btn1{
+    color: white;
+    background-color: #751f1f;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+.logout{
+    background-color: #751f1f;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #751f1f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.back-button{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    color: #751f1f;
+    display: flex;
+    justify-content:center;
+    width: 80px;
+    text-align: center;
+    margin: 10px 20px;
+    font-weight: bolder;
+}
+
+.reset:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+}

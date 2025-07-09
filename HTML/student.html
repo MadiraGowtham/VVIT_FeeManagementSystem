@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVIT FMS AdminDashboard</title>
+    <link rel="stylesheet" href="../CSS/student.css">
+</head>
+
+<body>
+    <header>
+        <img src="../images/vvit.jpeg" alt="VVIT Logo" class="logo">
+        <div class="nav">
+            <a href="student.html" class="btn">Students</a>
+            <a href="adminIndex.html#reports" class="btn">Download Receipt</a>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <div class="filter">
+            <select id="branch1" class="branch">
+                <option selected>Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="AID">AID</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+            </select>
+            <div id="students1"></div>
+            <button class="add" onclick="addStudent()">Add New Student</button>
+        </div>
+        <div class="create" id="create" style="display: none;"></div>
+        <div class="card-container" id="data"></div>
+        <div id="editForm" style="display:none; background:#fff; padding:20px; border:1px solid #ccc;"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 VVIT Fee Management System. All rights reserved.</p>
+    </footer>
+    <script src="../JS/student.js"></script>
+</body>
+
+</html>

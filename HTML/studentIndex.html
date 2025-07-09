@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVIT FMS StudentDashboard</title>
+    <link rel="stylesheet" href="../CSS/studentIndex.css">
+</head>
+
+<body>
+    <header>
+        <img src="../images/vvit.jpeg" alt="VVIT Logo" class="logo">
+        <div class="nav">
+            <a href="#submit" class="btn">Submit Fee</a>
+            <a href="#history" class="btn">Fee History</a>
+            <a href="#download" class="btn">Download Receipt</a>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <h1 class="name" id="name"></h1>
+        <div class="info">
+            <div class="total" id="total"></div>
+            <div class="upcoming" id="upcoming"></div>
+            <div class="outstanding" id="outstanding"></div>
+        </div>
+        <div class="submit" id="submit">
+            <h1 class="title">Submit Fee</h1>
+            <div class="submit-form" id="submit-form"></div>
+        </div>
+        <div class="history" id="history">
+            <h1 class="title">Payment History</h1>
+            <select class="filter" id="filter1">
+                <option selected>Select Semester</option>
+                <option value="1-1">1-1</option>
+                <option value="1-2">1-2</option>
+                <option value="2-1">2-1</option>
+                <option value="2-2">2-2</option>
+                <option value="3-1">3-1</option>
+                <option value="3-2">3-2</option>
+                <option value="4-1">4-1</option>
+                <option value="4-2">4-2</option>
+            </select>
+            <div class="history-table" id="history-table"></div>
+        </div>
+        <div class="download" id="download">
+            <h1 class="title">Download Receipt</h1>
+            <select class="filter" id="filter2">
+                <option selected>Select Semester</option>
+                <option value="1-1">1-1</option>
+                <option value="1-2">1-2</option>
+                <option value="2-1">2-1</option>
+                <option value="2-2">2-2</option>
+                <option value="3-1">3-1</option>
+                <option value="3-2">3-2</option>
+                <option value="4-1">4-1</option>
+                <option value="4-2">4-2</option>
+            </select>
+            <button class="btn1" onclick="downloadReceipt()">Download</button>
+        </div>
+        <div id="payment-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-total"></p>
+                <p id="modal-due"></p>
+                <img src="../images/qr.jpeg" width="150" height="150" alt="QR Code for Payment">
+
+                <form id="payment-form" onsubmit="submitPayment(event)">
+                    <label>Amount Paid:</label>
+                    <input type="number" id="amountPaid" required><br>
+
+                    <label>UTR Number:</label>
+                    <input type="text" id="utr" required><br>
+
+
+                    <input type="hidden" id="feeId">
+                    <input type="hidden" id="semester">
+                    <input type="hidden" id="alreadyPaid">
+                    <input type="hidden" id="totalFee">
+
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 VVIT Fee Management System. All rights reserved.</p>
+    </footer>
+    <script src="../JS/studentIndex.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #751f1f;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 2px 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(244, 241, 241, 0.573);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.logo {
+    transform: scale(0.5);
+    margin-left: -30px;
+}
+
+.btn {
+    color: #751f1f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 10px;
+}
+
+.btn:hover,
+.btn1 {
+    color: white;
+    background-color: #751f1f;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.logout {
+    background-color: #751f1f;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+main {
+    margin: 40px 30px;
+    border-radius: 20px;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+}
+
+.branch {
+    padding: 4px 8px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#students1 {
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+.add {
+    color: white;
+    background-color: #d2c6c691;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.add:hover {
+    color: #751f1f;
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: white;
+    color: #751f1f;
+    text-align: center;
+    padding: 10px 0px;
+    font-weight: bolder;
+}
+
+#create {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 30%;
+    left: 35%;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeIn 0.3s ease;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.card {
+    padding: 20px 15px;
+    margin: 25px 4px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px rgba(244, 241, 241, 0.573);
+}
+
+.card p {
+    margin-top: -10px;
+}
+
+.info {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+/* Container that holds all student cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 per row */
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Individual student card */
+.card {
+    width: 80%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner info section */
+.card .info {
+  margin-bottom: 10px;
+}
+
+.card .buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.card button {
+  padding: 6px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
