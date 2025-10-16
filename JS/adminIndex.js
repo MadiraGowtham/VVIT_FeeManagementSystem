@@ -20,9 +20,9 @@ function logout() {
 
 async function loadFeeStats() {
     const [feesRes, paymentsRes, usersRes] = await Promise.all([
-        fetch("http://localhost:3000/fees"),
-        fetch("http://localhost:3000/payments"),
-        fetch("http://localhost:3000/users?type=student")
+        fetch("https://json-server-api-3-xhbm.onrender.com/fees"),
+        fetch("https://json-server-api-3-xhbm.onrender.com/payments"),
+        fetch("https://json-server-api-3-xhbm.onrender.com/users?type=student")
     ]);
 
     const fees = await feesRes.json();
@@ -60,7 +60,7 @@ async function setupBranchSelector(branchId, studentDivId) {
         if (selectedBranch === "Select Branch") return;
 
         try {
-            const res = await fetch("http://localhost:3000/users?type=student");
+            const res = await fetch("https://json-server-api-3-xhbm.onrender.com/users?type=student");
             const allStudents = await res.json();
 
             const filtered = allStudents.filter(stu => stu.branch === selectedBranch);
@@ -138,7 +138,7 @@ async function downloadReceipt() {
 
     try {
         console.log(`Fetching for studentId=${studentId}, semester=${semester}`);
-        const res = await fetch(`http://localhost:3000/receipts?studentId=${studentId}&semester=${semester}`);
+        const res = await fetch(`https://json-server-api-3-xhbm.onrender.com/receipts?studentId=${studentId}&semester=${semester}`);
         const receipts = await res.json();
         console.log("Receipts fetched:", receipts);
 
@@ -211,7 +211,7 @@ function submitReceipt(event) {
 
     const receiptUrl = `receipts/${file.name}`;
 
-    fetch(`http://localhost:3000/users/${studentId}`)
+    fetch(`https://json-server-api-3-xhbm.onrender.com/users/${studentId}`)
         .then(res => {
             if (!res.ok) throw new Error("Student not found");
             return res.json();
@@ -227,7 +227,7 @@ function submitReceipt(event) {
                 date: new Date().toISOString()
             };
 
-            return fetch("http://localhost:3000/receipts", {
+            return fetch("https://json-server-api-3-xhbm.onrender.com/receipts", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
