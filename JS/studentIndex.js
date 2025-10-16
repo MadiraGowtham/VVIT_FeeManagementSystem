@@ -21,7 +21,7 @@ function logout() {
 
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-fetch(`http://localhost:3000/fees?studentId=${user.id}`)
+fetch(`https://json-server-api-3-xhbm.onrender.com/fees?studentId=${user.id}`)
   .then(res => res.json())
   .then(fees => {
     console.log("Fees:", fees);
@@ -61,7 +61,7 @@ function logout() {
 }
 
 function loadSubmitForm(userId) {
-  fetch(`http://localhost:3000/fees?studentId=${userId}`)
+  fetch(`https://json-server-api-3-xhbm.onrender.com/fees?studentId=${userId}`)
     .then(res => res.json())
     .then(data => {
       const formContainer = document.getElementById("submit-form");
@@ -129,7 +129,7 @@ async function submitPayment(e) {
 
   try {
     // Log the payment
-    await fetch("http://localhost:3000/payments", {
+    await fetch("https://json-server-api-3-xhbm.onrender.com/payments", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -142,7 +142,7 @@ async function submitPayment(e) {
     });
 
     // Update the fee record
-    const updateRes = await fetch(`http://localhost:3000/fees/${feeId}`, {
+    const updateRes = await fetch(`https://json-server-api-3-xhbm.onrender.com/fees/${feeId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -179,7 +179,7 @@ function setupHistoryFilter(userId) {
     const sem = select.value;
     if (sem === "Select Semester") return;
 
-    fetch(`http://localhost:3000/payments?studentId=${userId}&semester=${sem}`)
+    fetch(`https://json-server-api-3-xhbm.onrender.com/payments?studentId=${userId}&semester=${sem}`)
       .then(res => res.json())
       .then(data => {
         const table = document.getElementById("history-table");
@@ -217,7 +217,7 @@ function setupDownloadFilter(userId) {
     try {
       loadingElement.textContent = "Loading...";
       
-      const response = await fetch(`http://localhost:3000/receipts?studentId=${userId}&semester=${sem}`);
+      const response = await fetch(`https://json-server-api-3-xhbm.onrender.com/receipts?studentId=${userId}&semester=${sem}`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
