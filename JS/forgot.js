@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/users"; // change if your JSON Server runs elsewhere
+const apiUrl = "https://json-server-api-3-xhbm.onrender.com/users"; // change if your JSON Server runs elsewhere
 
   document.getElementById("forgotPasswordForm").addEventListener("submit", async function (e) {
     e.preventDefault();
