@@ -9,7 +9,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    fetch(`http://localhost:3000/users?username=${username}&password=${password}`)
+    fetch(`https://json-server-api-3-xhbm.onrender.com/users?username=${username}&password=${password}`)
         .then(res => res.json())
         .then(data => {
             if (data.length === 1) {
