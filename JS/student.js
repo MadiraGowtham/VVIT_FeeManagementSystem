@@ -28,7 +28,7 @@ async function setupBranchSelector() {
     if (branch === "Select Branch") return;
 
     try {
-      const res = await fetch("http://localhost:3000/users?type=student");
+      const res = await fetch("https://json-server-api-3-xhbm.onrender.com/users?type=student");
       const users = await res.json();
       const filtered = users.filter(user => user.branch === branch);
 
@@ -58,7 +58,7 @@ async function setupBranchSelector() {
         if (!studentId) return;
 
         try {
-          const res = await fetch(`http://localhost:3000/users?id=${studentId}`);
+          const res = await fetch(`https://json-server-api-3-xhbm.onrender.com/users?id=${studentId}`);
           const students = await res.json();
           const student = students[0];
 
@@ -94,7 +94,7 @@ async function setupBranchSelector() {
 
 async function showStudents() {
   const info = document.getElementById("data");
-  const response = await fetch("http://localhost:3000/users");
+  const response = await fetch("https://json-server-api-3-xhbm.onrender.com/users");
   const data = await response.json();
   const students = data.filter(user => user.type === "student");
   info.innerHTML = "";
@@ -121,7 +121,7 @@ async function showStudents() {
 
 window.editStudent = async function (id) {
   try {
-    const res = await fetch(`http://localhost:3000/users?id=${id}`);
+    const res = await fetch(`https://json-server-api-3-xhbm.onrender.com/users?id=${id}`);
     const students = await res.json();
     if (!students.length) return alert("Student not found");
 
@@ -155,7 +155,7 @@ window.editStudent = async function (id) {
         currentSemester: document.getElementById("editSem").value
       };
 
-      const updateRes = await fetch(`http://localhost:3000/users/${student.id}`, {
+      const updateRes = await fetch(`https://json-server-api-3-xhbm.onrender.com/users/${student.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedStudent)
@@ -180,7 +180,7 @@ window.deleteStudent = async function (id) {
   if (!confirm("Are you sure you want to delete this student?")) return;
 
   try {
-    const res = await fetch(`http://localhost:3000/users/${id}`, {
+    const res = await fetch(`https://json-server-api-3-xhbm.onrender.com/users/${id}`, {
       method: "DELETE"
     });
 
@@ -250,7 +250,7 @@ async function createStudent(e) {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/users", {
+    const response = await fetch("https://json-server-api-3-xhbm.onrender.com/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
